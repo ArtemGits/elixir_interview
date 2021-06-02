@@ -1,11 +1,11 @@
-defmodule InterviewTask1.MixProject do
+defmodule ElixirTrees.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :interview_task_1,
+      app: :elixir_trees,
       version: "0.1.0",
-      elixir: "~> 1.11",
+      elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
