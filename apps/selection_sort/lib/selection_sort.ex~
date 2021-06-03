@@ -1,6 +1,6 @@
-defmodule ElixirTrees do
+defmodule SelectionSort do
   @moduledoc """
-  Documentation for `ElixirTrees`.
+  Documentation for `SelectionSort`.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule ElixirTrees do
 
   ## Examples
 
-      iex> ElixirTrees.hello()
+      iex> SelectionSort.hello()
       :world
 
   """
