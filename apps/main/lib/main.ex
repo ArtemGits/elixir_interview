@@ -5,21 +5,20 @@ defmodule Main do
 
   @doc """
   """
-  @data Enum.to_list(:rand.uniform(100)..:rand.uniform(1_000))
 
   def algorithms() do
     [SelectionSort]
   end
 
   def main do
-    IO.inspect(@data)
+    data = for _x <- 0..:rand.uniform(50000), do: :rand.uniform(100)
 
     algorithms()
     |> Enum.map(fn e ->
-      Task.async(fn ->
-        e.start(@data, :asc)
+      Task.start(fn ->
+        e.start(data, :asc)
+        |> IO.inspect()
       end)
-      |> Task.await(15000)
     end)
   end
 end
