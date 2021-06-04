@@ -1,0 +1,18 @@
+defmodule InsertionSort do
+  @moduledoc """
+  Documentation for `InsertionSort`.
+  """
+
+  @doc """
+  Hello world.
+
+  ## Examples
+
+      iex> InsertionSort.hello()
+      :world
+
+  """
+  def hello do
+    :world
+  end
+end
