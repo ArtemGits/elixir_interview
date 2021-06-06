@@ -6,7 +6,7 @@ defmodule InsertionSort do
   @doc """
   """
 
-  def main(data, type) do
+  def start(data, type) do
     insertion_sort(data, type)
   end
 
@@ -27,27 +27,21 @@ defmodule InsertionSort do
     sorted
   end
 
-  defp insertion(elem, [], _) do
+  def insertion(elem, [head | tail], :asc) when elem <= head do
+    insertion(elem, [head | tail])
+  end
+
+  def insertion(elem, [head | tail], :desc) when elem >= head do
+    insertion(elem, [head | tail])
+  end
+
+  def insertion(elem, [head | tail], type) do
+    [head | insertion(elem, tail, type)]
+  end
+
+  def insertion(elem, [], _) do
     [elem]
   end
 
-  defp insertion(elem, [head | tail], type) do
-    case type do
-      :asc ->
-        [comparsion(elem, head, elem >= head, tail, type) | [head | tail]]
-
-      :desc ->
-        [comparsion(elem, head, elem <= head, tail, type) | [head | tail]]
-    end
-  end
-
-  defp comparsion(one, two, operation, tail, type) do
-    case operation do
-      true ->
-        one
-
-      false ->
-        insertion(two, tail, type)
-    end
-  end
+  def insertion(elem, [head | tail]), do: [elem | [head | tail]]
 end

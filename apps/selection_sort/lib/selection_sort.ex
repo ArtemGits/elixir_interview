@@ -32,10 +32,10 @@ defmodule SelectionSort do
   end
 
   defp selection(first, second, :asc) do
-    max(first, second)
+    min(first, second)
   end
 
   defp selection(first, second, _) do
-    min(first, second)
+    max(first, second)
   end
 end

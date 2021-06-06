@@ -7,18 +7,22 @@ defmodule Main do
   """
 
   def algorithms() do
-    [SelectionSort]
+    [SelectionSort, InsertionSort, BubbleSort]
   end
 
   def main do
-    data = for _x <- 0..:rand.uniform(50000), do: :rand.uniform(100)
+    data = for _x <- 0..:rand.uniform(10), do: :rand.uniform(10)
 
     algorithms()
-    |> Enum.map(fn e ->
+    |> Enum.map(fn algo ->
       Task.start(fn ->
-        e.start(data, :asc)
-        |> IO.inspect()
+        algo.start(data, :asc)
+        |> print(algo)
       end)
     end)
+  end
+
+  defp print(data, algo) do
+    IO.inspect("#{inspect(data)} --- #{algo}")
   end
 end
