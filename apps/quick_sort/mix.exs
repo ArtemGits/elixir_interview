@@ -1,9 +1,9 @@
-defmodule Main.MixProject do
+defmodule QuickSort.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :main,
+      app: :quick_sort,
       version: "0.1.0",
       build_path: "../../_build",
       config_path: "../../config/config.exs",

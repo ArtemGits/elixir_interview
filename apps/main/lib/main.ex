@@ -7,7 +7,7 @@ defmodule Main do
   """
 
   def algorithms() do
-    [SelectionSort, InsertionSort, BubbleSort]
+    [SelectionSort, InsertionSort, BubbleSort, CombSort, MergeSort, QuickSort]
   end
 
   def main do
